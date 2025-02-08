@@ -244,7 +244,18 @@ class DetailPageState extends State<DetailPage> {
 
     if (existingDisk != null) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Este disco ya está en tu colección')),
+        const SnackBar(
+          content: Text(
+            'Este disco ya se encuentra en tu colección',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 18,
+            ),
+          ),
+          backgroundColor: Color.fromARGB(255, 37, 37, 37),
+          behavior: SnackBarBehavior.floating,
+          duration: Duration(seconds: 2),
+        ),
       );
       return;
     }
@@ -257,7 +268,7 @@ class DetailPageState extends State<DetailPage> {
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(
         content: Text(
-          'Disco eliminado de la colección',
+          'Disco añadido a la colección',
           style: TextStyle(
             color: Colors.white,
             fontSize: 18,
